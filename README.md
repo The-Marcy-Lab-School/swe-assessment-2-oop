@@ -1,103 +1,352 @@
 # Object-Oriented Programming Assessment
 
-**Take a deep breath** and let that adrenaline run out of you. You got this!
+**Table of Contents:**
+- [Assessment Overview](#assessment-overview)
+  - [Setup Instructions](#setup-instructions)
+  - [Running Tests \& Linter for Code Style](#running-tests--linter-for-code-style)
+  - [Submission Instructions](#submission-instructions)
+  - [What Resources Can I Use?](#what-resources-can-i-use)
+  - [FAQ](#faq)
+  - [Good Luck! 🚀](#good-luck-)
+- [Section 1: Short Response](#section-1-short-response)
+  - [Question 1: Encapsulation](#question-1-encapsulation)
+  - [Question 2: this Keyword](#question-2-this-keyword)
+  - [Question 3: Polymorphism](#question-3-polymorphism)
+  - [Question 4: Inheritance](#question-4-inheritance)
+- [Section 2: System Design](#section-2-system-design)
+- [Section 3: Class Implementation](#section-3-class-implementation)
+  - [Problem 1: Implement from Scratch - Pokemon](#problem-1-implement-from-scratch---pokemon)
+  - [Problem 2: Debug Broken Code - Bank and BankAccount](#problem-2-debug-broken-code---bank-and-bankaccount)
+  - [Problem 3: Implement from Scratch - Phone and iPhone](#problem-3-implement-from-scratch---phone-and-iphone)
 
-## Table of Contents
+Welcome to your first module assessment! This assessment tests your understanding of JavaScript fundamentals including variables, functions, control flow, loops, arrays, and objects.
 
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-  - [What resources can you use?](#what-resources-can-you-use)
-  - [Before you start](#before-you-start)
-  - [Running tests effectively](#running-tests-effectively)
-  - ["Why can't I see my logs in the test?"](#why-cant-i-see-my-logs-in-the-test)
-- [Section 0: Factory Functions](#section-0-factory-functions)
-- [Section 1: Has Many / Belongs To](#section-1-has-many--belongs-to)
-- [Section 2: Inheritance \& Polymorphism](#section-2-inheritance--polymorphism)
+## Assessment Overview
 
-## Overview
+The assessment has 3 sections:
 
-### What resources can you use?
+1. **Short Response** - Answer questions about JavaScript concepts
+2. **System Design** - Design a system and create a UML diagram that reflects it
+3. **Class Implementation** - Implement JavaScript classes that satisfy the given requirements.
 
-This is an open book assessment which means you can use the [Marcy Docs](https://marcylabschool.gitbook.io/marcy-lab-school-docs) and other internet resources. However, please do not talk to other fellows and **do not use any AI resources**. We need to see what *you* know from this assessment.
+Your repository contains the following relevant files:
 
-### Before you start
+```
+swe-assessment-2-oop/
+├── README.md                          # This file - your instructions
+├── rubric.md                          # The grading rubric for this assessment
+├── src/
+│   ├── short-response.md             # Section 1: Answer questions here
+│   ├── system-design.md              # Section 2: Include a link to your design and your Loom recording
+│   ├── pokemon.js                    # Section 3: Problem 1
+│   ├── bankAccount.js                # Section 3: Problem 2
+│   └── pokemon.js                    # Section 3: Problem 3
+└── tests/
+    ├── coming soon...
+    └── coming soon...
+```
 
-After cloning down the repo, run `npm i` to install dependencies.
+--- 
 
-Before you are 3 sections:
+### Setup Instructions
 
-* Section 0: Factory Functions
-* Section 1: Has Many / Belongs To
-* Section 2: Inheritance & Polymorphism
+Clone the Repository
 
-Each section has a file in the `src/` directory and an associated test file in the `tests/` directory.
+```bash
+git clone <repository-url>
+cd swe-assessment-2-oop
+```
 
-As you work on a section, you should also open up the corresponding `tests/*.spec.js` file.
+Switch to a `draft` branch
 
-### Running tests effectively
+```bash
+git checkout -B draft
+```
 
-> Did you run `npm i` yet?
+Install Dependencies
 
-A test will pass if the `expect()` statements inside are all successful. When reading a test, ask yourself
-* What inputs is the test providing to my function?
-* What is the expected output of my function?
-* Are there any expected side effects?
+```bash
+npm install
+```
 
-We recommend using `npm run test:w`. This will activate jest's "watch" mode, which automatically re-runs the tests on every file save.
+Verify Setup
 
-Remember, while in watch mode if you hit `w`, a menu of options opens. These options allow you to focus on only running certain test or certain test files.
+Run the test suite to make sure everything is working:
 
-For example hitting `p` and then typing `from-scratch` it will only run tests from a file that matches that name. You can hit `a` to go back to running all tests.
+```bash
+npm test
+```
 
-Hit `ctrl` and `c` to exit watch mode.
+You should see tests running (most will fail initially - that's expected!).
 
-You can also use `npm run test` to run tests manually.
+--- 
 
-### "Why can't I see my logs in the test?"
+### Running Tests & Linter for Code Style
 
-Because we are testing how and when you use `console.log`, we are "mocking it" — we are taking control of it and changing its behavior.
+**Run all tests:**
+```bash
+npm test
+```
 
-So, `console.log` what you need to in order to pass the test; but if you want to see some extra debugging output, use `console.info` instead since we haven't overwritten that function.
+**Run tests for a specific section:**
+```bash
+npm test from-scratch
+```
 
-OR! Just use the `playground.js` file to mess around, that will log everything like normal. Run that file with `node playground.js`.
+**Run tests in watch mode (re-runs on file changes):**
+```bash
+npm test -- --watch
+```
 
-**Now get out there and good luck! You got this!**
+**Check for linting errors:**
+```bash
+npm run lint
+```
 
-## Section 0: Factory Functions
+---
 
-Remember this? In the `0-factory-function.js` file, you'll find a `bankAccountFactory` function waiting for you.
+### Submission Instructions
 
-This time, you won't be using classes. You'll be going back to day 1 of OOP and building a factory function that uses closure to keep its data private.
+Before submitting your assessment, go through this checklist to ensure you haven't missed any critical details!
 
-Your function should return an object with methods for manipulating data made private through closure.
+**Submission Checklist:**
+- [ ] All questions in `src/short-response.md` are answered
+- [ ] All functions in `src/from-scratch.js` are written
+- [ ] All links are provided in `src/system-design.md` are fixed
+- [ ] Short responses have been proofread and cleared of any typos or grammar mistakes.
+- [ ] Run `npm test` - as many tests as possible should pass
+- [ ] Run `npm run lint` - fix any errors
+- [ ] Remove any `console.log` statements used for debugging
+- [ ] Remove any commented-out code
 
-## Section 1: Has Many / Belongs To
+**How to Submit:**
 
-In this section, you must build 2 classes `ToDoList` and `ToDoItem` in the `1-has-many-belongs-to.js` file. **Your task is to create the basic properties and methods required for the relationship to work**. The tests for these files are in `1-has-many-belongs-to.spec.js`.
+1. Commit your changes:
+  
+    ```bash
+    git add -A
+    git commit -m "Completed assessment"
+    ```
 
-But wait, theres more!
+2. Push to GitHub:
+   
+    ```bash
+    git push
+    ```
 
-**You must add at least 1 instance method and property to each class.** But feel free to add more! 1 each is just what the tests require. Get creative!
+3. Create a pull request to merge `draft` into `main` and tag your instructor for review.
 
-* In order to keep the primary tests passing, make sure that your custom properties come *after* the required parameters (if at all).
-* Run your tests constantly to make sure you don't accidentally break anything, ok?
+4. Submit on Canvas:
 
-To be nice, we've kick started the code a little bit with an ID utils function.
+   - Submit the link to your pull request on Canvas
+   - Double-check that your latest code is visible on the `draft` branch in GitHub
 
-## Section 2: Inheritance & Polymorphism
+---
 
-Inside the `2-inheritance-polymorphism.js` file you'll see 2 classes:
+### What Resources Can I Use?
 
-* A `Phone` class
-* An `AppleIPhone` class
+**Allowed Resources:**
+- ✅ MDN Documentation
+- ✅ Your notes from class
+- ✅ Previous assignments and labs
+- ✅ Running code in Node to test ideas
 
-Your mission is to get all the tests to pass. There are a *lot* of tests and they'll tell you exactly what to build. Here are some tips for reading tests to write code:
+**NOT Allowed:**
+- ❌ AI tools (ChatGPT, Claude, Copilot, etc.)
+- ❌ Asking classmates for help
+- ❌ Searching for solutions online
+- ❌ Posting questions on Stack Overflow, Reddit, etc.
 
-* Read the test names! Those say what the test is looking for in plain english.
-* What are the function signatures (what arguments do you need and what types of data do they expect)?
-* Are the methods pure or do they rely on some internal state? Do they have side effects?
-* Does the function console log? Return something? Both? Neither?? WHAT DOES IT DO?!
-* Are your methods and properties *spelled* correctly?
-* Do any classes inherit from any others?
+**If You're Stuck:**
+- Read the error messages carefully
+- Check the test files to understand what's expected
+- Use `console.log()` to debug your code
+- Take a break and come back with fresh eyes
+- Remember: struggling is part of learning!
 
-## You Got This!
+---
+
+### FAQ
+
+**Q: Can I use AI tools to check my work?**  
+A: Yes, but not for everything. The code that you write and the short response answers you provide must be 100% yours. You cannot provide any AI tool with your code or writing to review and you cannot provide any AI tool with a problem from the assessment to solve. However, you can use AI to support your learning and understanding of key concepts that are mentioned in the assessment. For example, if the assessment mentions scope, you can use Gemini or ChatGPT to help you understand that concept better but you cannot paste the question prompt into these tools to get an answer.
+
+**Q: What if I don't finish in 6 hours?**
+A: You can request a 1-day extension. Speak with an instructor.
+
+**Q: Do all my tests need to pass?**
+A: Not necessarily. Partial credit is awarded based on the rubric. Do your best!
+
+**Q: Can I use Google?**
+A: You can use MDN and official documentation, but don't search for solutions to the specific problems. Feel free to use the Marcy GitBook, your own notes, and past assignments.
+
+**Q: What if my video is slightly over 4 minutes?**
+A: A few seconds over is fine. Just avoid excessive rambling.
+
+**Q: Can I resubmit if I'm not happy with my score?**
+A: Talk to your instructor about retake options.
+
+--- 
+
+### Good Luck! 🚀
+
+Remember:
+- Read all instructions carefully before starting
+- Don't spend too much time on one question - move on and come back
+- Save your work frequently (`git commit` regularly)
+- Test your code as you write it
+
+If you have questions about the instructions (not the content), ask an instructor.
+
+## Section 1: Short Response
+
+### Question 1: Encapsulation
+
+In your own words, explain what encapsulation means in OOP. Give one reason why it's useful.
+
+### Question 2: this Keyword
+
+Look at this code:
+
+```jsx
+class Counter {
+	constructor() {
+		this.count = 0;
+	}
+  increment() {
+    this.count++;
+  }
+}
+
+const counterA = new Counter();
+const counterB = new Counter();
+
+counterA.increment();
+counterA.increment();
+counterA.increment();
+
+counterB.increment();
+
+console.log(counterA.count);
+console.log(counterB.count);
+```
+
+Use this code snippet as an example to support your explanation of the following:
+- How is the value of `this` is determined?
+- What is the value of `this` in the `constructor` method?
+- What is the value of `this` in the `increment` method?
+- Why is the `this` keyword useful?
+
+### Question 3: Polymorphism
+
+In your own words, explain what **polymorphism** means in OOP. Provide an example in code that demonstrates polymorphism.
+
+### Question 4: Inheritance
+
+You're building a game where players can raise different digital pets: Cats, Dogs, and Birds. All pets have have a `name`, `energy` level, and `happiness` level and can all `sleep`. Cats have the ability to `hunt`, dogs have the ability to `chase`, and birds have the ability to `fly`.
+
+**Part A:** Describe in words how you would use inheritance to organize these classes.
+
+**Part B:** Explain one advantage of using inheritance here instead of creating three completely separate classes.
+
+--
+
+## Section 2: System Design
+
+**Prompt:** You're given a basic School Management System with two classes:
+
+- `School` (properties: `name`, `address`, `students`, and methods: `addStudent()`)
+- `Student` (properties: `name`, `grade`, `studentId`)
+
+**Your task:** Extend this system to handle:
+
+1. Teachers who work at the school and teach multiple courses.
+2. Courses that have one teacher and many enrolled students.
+4. The ability to track student grades in each course they are enrolled in.
+
+**Deliverables:**
+
+- UML diagram showing the original classes PLUS your new classes and relationships (created using draw.io, Google Drawings, or a similar diagraming tool)
+  - For each relationship, label it as "one to one", "one to many", or "many to many"
+  - For each class, include properties with data types and methods with named parameters
+- Recorded video (~5 minutes) explaining:
+    - What new classes you added and why
+    - How you connected them to the existing system
+    - One limitation or challenge in your design
+
+---
+
+## Section 3: Class Implementation
+
+### Problem 1: Implement from Scratch - Pokemon
+
+**Instructions:** Create a Pokemon class with the following specifications:
+
+**Instance Properties:**
+
+- `name` (String)
+- `type` (String)
+- `level` (Number, starts at `1`)
+- `health` (Number, starts at `100`)
+
+**Instance Methods:**
+
+- `attack(target)` - reduces the target Pokemon's `health` by `10` multiplied by the Pokemon's `level`. Then print `"{name} attacked {target.name}!"`
+- `levelUp()` - increases `level` by `1` and increases `health` by `10`. Then print `"{name} leveled up to level {level}!"`
+- `isFainted()` - returns `true` if `health` is `0` or below, `false` otherwise
+
+**Static Properties**
+
+- Static property: `allPokemon` (array tracking all created Pokemon)
+
+**Static Methods**
+
+- Static method: `getTotalPokemon()` - returns count of all Pokemon created
+- Static method: `findByName(name)` - searches the `allPokemon` array and returns matching Pokemon
+
+**Test your code:**
+
+Create two `Pokemon` instances and demonstrate:
+
+1. One Pokemon attacking another
+2. Leveling up a Pokemon
+3. Attacking until one faints, then checking if it's fainted
+
+---
+
+### Problem 2: Debug Broken Code - Bank and BankAccount
+
+**Instructions:**: Look at the file `src/bankAccount.js`. It was generated by AI and has several bugs. Fix them!
+
+First, read through the code carefully to understand what the program *should* do. 
+
+Then, comment out the broken code and replace it with your fixed code.
+
+---
+
+### Problem 3: Implement from Scratch - Phone and iPhone
+
+**Instructions:** Create a class hierarchy for phones with inheritance:
+
+**Phone class (parent):**
+
+- Properties: `brand`, `model`, `batteryLevel` (starts at 100), `password` (private, must be a 4-character string)
+- Methods:
+    - `makeCall(number)` - decreases battery by 5, logs `"Calling {number}..."`
+    - `charge()` - sets battery back to 100, logs `"Phone fully charged"`
+    - `unlock(password)` - returns `“Phone unlocked”` if the provided password matches the private password
+
+**iPhone class (child - inherits from Phone):**
+
+- Additional property: `iOSVersion`
+- Override `makeCall(number)` to also log `"Using FaceTime audio"` before calling the parent's `makeCall`
+- New method: `faceTime(name)` - decreases `battery` by 2, logs `"Facetiming {name}"`
+
+**Test your code:**
+
+Create an iPhone and demonstrate:
+
+1. Making a call (should show both the FaceTime audio message and regular call message).
+2. Using the `faceTime` method.
+3. Checking battery level after both actions.
+4. Charging the phone.

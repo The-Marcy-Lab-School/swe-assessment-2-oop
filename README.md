@@ -202,11 +202,15 @@ If you have questions about the instructions (not the content), ask an instructo
 
 ### Question 1: Encapsulation
 
-In your own words, explain what encapsulation means in OOP. Give one reason why it's useful.
+Encapsulation is an essential principle of object-oriented programming. 
+
+In your own words, explain what the core aspects of encapsulation are and give one reason why it's useful.
 
 ### Question 2: this Keyword
 
-Look at this code:
+Explain how the value of `this` is determined in various contexts and why it is useful.
+
+Use the code snippet below to support your response:
 
 ```jsx
 class Counter {
@@ -230,12 +234,6 @@ counterB.increment();
 console.log(counterA.count);
 console.log(counterB.count);
 ```
-
-Use this code snippet as an example to support your explanation of the following:
-- How is the value of `this` is determined?
-- What is the value of `this` in the `constructor` method?
-- What is the value of `this` in the `increment` method?
-- Why is the `this` keyword useful?
 
 ### Question 3: Polymorphism
 

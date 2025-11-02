@@ -22,16 +22,16 @@ class Bank {
 }
 
 class BankAccount {
+  #balance = 0;
   constructor(accountNumber, ownerName) {
     this.accountNumber = accountNumber;
     this.ownerName = ownerName;
-    balance = 0;
     totalAccounts++;
   }
 
   deposit(amount) {
     this.balance += amount;
-    console.log(`Deposited $${amount}. New balance: $${balance}`);
+    console.log(`Deposited $${amount}. New balance: $${this.balance}`);
   }
 
   withdraw(amount) {

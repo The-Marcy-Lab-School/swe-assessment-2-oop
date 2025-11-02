@@ -26,7 +26,7 @@ class BankAccount {
   constructor(accountNumber, ownerName) {
     this.accountNumber = accountNumber;
     this.ownerName = ownerName;
-    totalAccounts++;
+    BankAccount.#totalAccounts++;
   }
 
   deposit(amount) {
@@ -42,6 +42,10 @@ class BankAccount {
 
   getBalance() {
     return balance;
+  }
+
+  static getTotalAccounts() {
+    return BankAccount.#totalAccounts;
   }
 }
 

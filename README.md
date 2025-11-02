@@ -323,7 +323,7 @@ Then, comment out the broken code and replace it with your fixed code.
 - Methods:
     - `makeCall(number)` - decreases battery by 5, logs `"Calling {number}..."`
     - `charge()` - sets battery back to 100, logs `"Phone fully charged"`
-    - `unlock(password)` - returns `“Phone unlocked”` if the provided password matches the private password
+    - `unlock(password)` - returns true and logs `“Phone unlocked”` if the provided password matches the private password. Otherwise returns false and logs `"Invalid password"`.
 
 **iPhone class (child - inherits from Phone):**
 
@@ -337,5 +337,5 @@ Create an iPhone and demonstrate:
 
 1. Making a call (should show both the FaceTime audio message and regular call message).
 2. Using the `faceTime` method.
-3. Checking battery level after both actions.
 4. Charging the phone.
+3. Checking battery level after each action.

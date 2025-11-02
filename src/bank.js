@@ -62,3 +62,6 @@ account2.deposit(250);
 
 console.log("Total bank balance:", myBank.getTotalBalance()); // Should be 350
 console.log("Found account:", myBank.findAccount("001").ownerName); // Should be "Alice"
+
+const account3 = new BankAccount("003", "Charlie");
+console.log("Total accounts:", BankAccount.getTotalAccounts()); // Should be 3

@@ -254,7 +254,7 @@ You're building a game where players can raise different digital pets: Cats, Dog
 **Prompt:** You're given a basic School Management System with two classes:
 
 - `School` (properties: `name`, `address`, `students`, and methods: `addStudent()`)
-- `Student` (properties: `name`, `grade`, `studentId`)
+- `Student` (properties: `name`, `gradeLevel`, `studentId`)
 
 **Your task:** Extend this system to handle:
 

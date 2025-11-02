@@ -251,26 +251,17 @@ You're building a game where players can raise different digital pets: Cats, Dog
 
 ## Section 2: System Design
 
-**Prompt:** You're given a basic School Management System with two classes:
+**Prompt:** Design a class system for a pet adoption shelter. Your design should include at least one has-many relationship (if not more).
 
-- `School` (properties: `name`, `address`, `students`, and methods: `addStudent()`)
-- `Student` (properties: `name`, `gradeLevel`, `studentId`)
-
-**Your task:** Extend this system to handle:
-
-1. Teachers who work at the school and teach multiple courses.
-2. Courses that have one teacher and many enrolled students.
-4. The ability to track student grades in each course they are enrolled in.
+At minimum, the system should allow for a shelter to track pets in the shelter and track all pets that have been adopted from the shelter. Each adoption should indicate the pet adopted as well as the name of the person who adopted the pet and some contact information for that person.
 
 **Deliverables:**
-
-- UML diagram showing the original classes PLUS your new classes and relationships (created using draw.io, Google Drawings, or a similar diagraming tool)
-  - For each relationship, label it as "one to one", "one to many", or "many to many"
-  - For each class, include properties with data types and methods with named parameters
-- Recorded video (~5 minutes) explaining:
-    - What new classes you added and why
-    - How you connected them to the existing system
-    - One limitation or challenge in your design
+- UML diagram showing all classes, properties, methods and relationships (has many, or has one)
+  - For each relationship, label it as "has one" or "has many" with an arrow indicating the direction of ownership.
+  - For each class, include properties with data types and methods with named parameters.
+- 3-5 minute recorded explanation covering:
+    - Why you chose specific relationships (has-many, belongs-to)
+    - How your design would handle a person adopting a pet
 
 ---
 

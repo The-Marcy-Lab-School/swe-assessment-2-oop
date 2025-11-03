@@ -14,6 +14,11 @@
   - [Question 3: Polymorphism](#question-3-polymorphism)
   - [Question 4: Inheritance](#question-4-inheritance)
 - [Section 2: System Design](#section-2-system-design)
+  - [Scenario](#scenario)
+  - [Framing Questions (for your own thinking)](#framing-questions-for-your-own-thinking)
+  - [Deliverables](#deliverables)
+  - [Requirements](#requirements)
+  - [Evaluation Criteria](#evaluation-criteria)
 - [Section 3: Class Implementation](#section-3-class-implementation)
   - [Problem 1: Implement from Scratch - Pokemon](#problem-1-implement-from-scratch---pokemon)
   - [Problem 2: Debug Broken Code - Bank and BankAccount](#problem-2-debug-broken-code---bank-and-bankaccount)
@@ -254,35 +259,64 @@ You're building a game where players can raise different digital pets: Cats, Dog
 
 ## Section 2: System Design
 
-**Prompt:** You're given a basic School Management System with two classes:
+### Scenario
+You are tasked with designing a **restaurant ordering system**. The goal is to model how customers and restaurants interact through orders placed in the system.
 
-- `School`
-  - Properties: 
-    - `name`: String
-    - `address`: String
-    - `students`: Student[] (an array of Students)
-  - Methods: 
-    - `addStudent(student)`
+Your system design should capture the relationships between objects, the properties and methods that describe their behavior, and the data flow that connects them (for example, how an order moves from a customer to a restaurant and then to a driver).
 
-- `Student`
-  - Properties:
-    - `name`: String
-    - `gradeLevel`: Number
-    - `studentId`: Number
+### Framing Questions (for your own thinking)
+You do **not** need to answer these directly, but use them to guide your design:
+- How does a customer indicate what they want in their order?
+- How does a restaurant make their menu of options known to the user?
+- How is a total calculated?
 
-**Your task:** Extend this system to handle:
+### Deliverables
 
-1. Teachers who work at the school and teach multiple courses
-2. Courses that have one teacher and many enrolled students
-3. The ability to track student grades in each course
+1. **UML Class Diagram**  
+   - Must include all classes, properties, methods, and relationships with correct multiplicity notation and association labels.
 
-**Deliverables:**
+2. **3–5 minute recorded explanation** covering:
+   - Why you chose the specific relationships and class responsibilities.  
+   - How your system handles the creation and flow of an order (from when a customer places it to when it’s delivered).  
+   - Any trade-offs or design decisions you made.
 
-- UML diagram showing the original classes PLUS your new classes and relationships
-- Written explanation (1-2 paragraphs) describing:
-    - What new classes you added and why
-    - How you connected them to the existing system
-    - One limitation or challenge in your design
+### Requirements
+
+Your class system _must_ have the following:
+
+1. **Include at least four interacting classes.** 
+   * Examples might include (but are not limited to): `Customer`, `Restaurant`, `Order`, etc...
+   * You are free to decide which classes are most important to your design.
+
+2. **Model relationships using appropriate multiplicity.**
+   * At least one has-many relationship (e.g., a restaurant has many menu items) but you may include more.
+   * Show multiplicity using standard UML notation:
+     * Exactly one: `1`
+     * Zero or one: `0..1`
+     * Zero or more: `0..*`
+   * Add **association labels** to describe each relationship (e.g., "is created by", "creates many", "has one", etc...).
+
+3. **Include detailed class definitions with:**
+   * **Properties** (attributes) and their **data types**.
+   * **Methods** (behaviors) and their **named parameters**.
+   * Enough detail to show how the classes interact (for example, how an order is placed or how a total is calculated).
+
+4. **Represent your design visually with a UML Class Diagram that includes:**
+
+   * All classes, properties, methods, and relationships.
+   * Multiplicity indicators for all relationships.
+   * Association labels that describe the purpose of each connection.
+   * Clear, uncluttered formatting so another programmer could understand the system from your diagram.
+
+
+### Evaluation Criteria
+Your submission will be assessed on:
+- **Clarity and completeness** of the UML diagram.  
+- **Correct use of object-oriented principles** (encapsulation, abstraction, relationships).  
+- **Accuracy of multiplicity notation** to represent class relationships.  
+- **Clarity of association labels** that describe relationships between classes.  
+- **Quality of reasoning** in your recorded explanation.  
+- **Creativity and realism** in modeling a system that could exist in the real world.
 
 ## Section 3: Class Implementation
 

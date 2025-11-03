@@ -169,7 +169,10 @@ Before submitting your assessment, go through this checklist to ensure you haven
 ### FAQ
 
 **Q: Can I use AI tools to check my work?**  
-A: Yes, but not for everything. The code that you write and the short response answers you provide must be 100% yours. You cannot provide any AI tool with your code or writing to review and you cannot provide any AI tool with a problem from the assessment to solve. However, you can use AI to support your learning and understanding of key concepts that are mentioned in the assessment. For example, if the assessment mentions scope, you can use Gemini or ChatGPT to help you understand that concept better but you cannot paste the question prompt into these tools to get an answer.
+A: No, you may not. You are allowed to use official documentation (e.g. MDN), your notes, and our course GitBook for this exam. You may also use StackOverflow. However, you may not use LLMs, such as ChatGPT or Claude to support you on this exam.
+
+**Q: Can I use AI tools to check my writing?**  
+You may use Grammarly to proofread your writing to ensure that it is grammar-error and typo-free.
 
 **Q: What if I don't finish in 6 hours?**
 A: You can request a 1-day extension. Speak with an instructor.
@@ -202,15 +205,13 @@ If you have questions about the instructions (not the content), ask an instructo
 
 ### Question 1: Encapsulation
 
-Encapsulation is an essential principle of object-oriented programming. 
-
-In your own words, explain what the core aspects of encapsulation are and give one reason why it's useful.
+In your own words, explain what is _encapsulation_? Why is this concept beneficial when programming? Please use a code snippet to illustrate _encapsulation_?
 
 ### Question 2: this Keyword
 
-Explain how the value of `this` is determined in various contexts and why it is useful.
+Explain how the value of `this` is determined. Why is the `this` keyword useful?
 
-Use the code snippet below to support your response:
+In the code snippet below, what does `this` refer to?:
 
 ```jsx
 class Counter {
@@ -250,19 +251,75 @@ You're building a game where players can raise different digital pets: Cats, Dog
 --
 
 ## Section 2: System Design
+### **Scenario**
+Imagine you are designing the class system for an **online food-ordering app** like UberEats or DoorDash. The goal is to model how customers, restaurants, and delivery drivers interact through orders placed in the system.
 
-**Prompt:** Design a class system for a pet adoption shelter. Your design should include at least one has-many relationship (if not more).
+Your system design should capture the **relationships** between objects, the **properties and methods** that describe their behavior, and the **data flow** that connects them (for example, how an order moves from a customer to a restaurant and then to a driver).
 
-At minimum, the system should allow for a shelter to track pets in the shelter and track all pets that have been adopted from the shelter. Each adoption should indicate the pet adopted as well as the name of the person who adopted the pet and some contact information for that person.
+---
 
-**Deliverables:**
-- UML diagram showing all classes, properties, methods and relationships (has many, or has one)
-  - For each relationship, label it as "has one" or "has many" with an arrow indicating the direction of ownership.
-  - For each class, include properties with data types and methods with named parameters.
-- 3-5 minute recorded explanation covering:
-    - Why you chose specific relationships (has-many, belongs-to)
-    - How your design would handle a person adopting a pet
+### **Requirements**
 
+Your class system must:
+
+1. **Include at least four interacting classes.**  
+   Examples might include (but are not limited to):  
+   - `Customer`, `Restaurant`, `Order`, `MenuItem`, `Driver`, `Payment`, `Delivery`, etc.  
+   You are free to decide which classes are most important to your design.
+
+2. **Model relationships using appropriate multiplicity.**  
+   - At least one **has-many** relationship (e.g., a restaurant *has many* menu items).  
+   - You may include more (e.g., a customer *has many* orders).  
+   - Show multiplicity using standard UML notation (`1`, `0..1`, `1..*`, `0..*`).  
+   - Add **association labels** to describe each relationship (e.g., `belongsTo`, `is a`, `deliveredBy`, `has`, `creates`, etc.).
+
+3. **Include detailed class definitions** with:
+   - **Properties** (attributes) and their **data types**.  
+   - **Methods** (behaviors) and their **named parameters**.  
+   - Enough detail to show how the classes interact (for example, how an order is placed, assigned, or fulfilled).
+
+4. **Represent your design visually** with a **UML Class Diagram** that includes:
+   - All classes, properties, methods, and relationships.  
+   - **Multiplicity indicators** for all relationships.  
+   - **Association labels** that describe the purpose of each connection.  
+   - Clear, uncluttered formatting so another programmer could understand the system from your diagram.
+
+---
+
+### **Deliverables**
+
+1. **UML Class Diagram**  
+   - Must include all classes, properties, methods, and relationships with correct multiplicity notation and association labels.
+
+2. **3–5 minute recorded explanation** covering:
+   - Why you chose the specific relationships and class responsibilities.  
+   - How your system handles the creation and flow of an order (from when a customer places it to when it’s delivered).  
+   - Any trade-offs or design decisions you made.
+
+---
+
+### **Evaluation Criteria**
+
+Your submission will be assessed on:
+- **Clarity and completeness** of the UML diagram.  
+- **Correct use of object-oriented principles** (encapsulation, abstraction, relationships).  
+- **Accuracy of multiplicity notation** to represent class relationships.  
+- **Clarity of association labels** that describe relationships between classes.  
+- **Quality of reasoning** in your recorded explanation.  
+- **Creativity and realism** in modeling a system that could exist in the real world.
+
+---
+
+### **Framing Questions (for your own thinking)**
+You do **not** need to answer these directly, but use them to guide your design:
+- How does a `Customer` place an `Order`?  
+- How does a `Restaurant` manage its `MenuItems`?  
+- How is a `Driver` assigned to deliver an order?  
+- How is payment or confirmation handled?  
+
+---
+
+**Tip:** Strong designs will demonstrate clear ownership between classes, use meaningful association labels (e.g., `places`, `includes`, `fulfills`), and show how data flows through the system using multiplicity and method interactions.
 ---
 
 ## Section 3: Class Implementation

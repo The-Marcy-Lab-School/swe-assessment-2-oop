@@ -14,10 +14,10 @@ As a quick guide, check the following before submitting:
 ## Question 1
 
 Encapsulation has two core components:
-1. The bundling or grouping of data and the functions that use that data inside of a single object.
+1. The bundling or grouping of data and the methods that use that data inside of a single object.
 2. The restriction of access to that data such that it can only be accessed in a controlled manner.
 
-Encapsulation is a useful principle of coding because it guides us to create more consistent and predictable code through well-designed class interfaces.
+Encapsulation is a useful principle of coding because it guides us to create more consistent and predictable code through well-designed class interfaces. Encapsulated code is **safer** because it prevents other parts of the codebase from inadvertently modifying critical data. It's also **easier to maintain** because you can implement changes on encapsulated code while limiting your potential impact on other parts of the codebase. 
 
 ## Question 2
 
@@ -27,9 +27,21 @@ The value of `this` is determined based on the **execution context** in which it
 
 `this` is particularly useful with classes because it allows us to define a single method that can be used by many instances of a class. Those methods are able to reference the specific instance that is invoking the method without any hardcoding or duplicated code.
 
+**Key Phrases**
+> `this` refers to the object that is currently executing the function.
+> In the global context, `this` defaults to the global object (window in browsers, global in Node.js), or undefined if using strict mode.
+**Something for us to discuss...**
+> Arrow functions don’t have their own `this`. They use the value of this from where they were defined, not where they are called.
+
 ## Question 3
 
-Polymorphism is the idea that many different objects can be used in the same manner even if the underlying details are different. For example, you may have a `SpanishTeacher` class, a `FrenchTeacher` class, and an `EnglishTeacher` class that all are subclasses of a `LanguageTeacher` class and each implement their own version of a method `greetClass()`. Instances of each subclass can all invoke `greetClass()` but the outcome will be different based on the different implementations.
+Polymorphism is the idea that many different objects can use the **same interface**. This allows different classes to respond to the same method in different ways. For example, you may have a `SpanishTeacher` class, a `FrenchTeacher` class, and an `EnglishTeacher` class that all are subclasses of a `LanguageTeacher` class and each implement their own version of a method `greetClass()`. Instances of each subclass can all invoke `greetClass()` but the outcome will be different based on the different implementations.
+
+**Key Phrases**
+> "same/common interface"
+
+**Note**
+Your example is good here but a bit more complex. I might use a simpler example with just two classes. I may even use a prototype method like `.length` or `.toString()`
 
 ```js
 class LanguageTeacher {

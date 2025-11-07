@@ -216,11 +216,11 @@ Provide a code snippet to illustrate _encapsulation_.
 
 ### Question 2: this Keyword
 
-Explain how the value of `this` is determined. Why is the `this` keyword useful?
+Explain what the `this` keyword is. Why is the `this` keyword useful?
 
 In the code snippet below, what does `this` refer to?
 
-```jsx
+```js
 class Counter {
 	constructor() {
 		this.count = 0;

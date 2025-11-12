@@ -15,13 +15,11 @@
   - [Question 4: Inheritance](#question-4-inheritance)
 - [Section 2: System Design](#section-2-system-design)
   - [Scenario](#scenario)
-  - [Framing Questions (for your own thinking)](#framing-questions-for-your-own-thinking)
   - [Deliverables](#deliverables)
   - [Requirements](#requirements)
-  - [Evaluation Criteria](#evaluation-criteria)
 - [Section 3: Class Implementation](#section-3-class-implementation)
-  - [Problem 1: Implement from Scratch - Pokemon](#problem-1-implement-from-scratch---pokemon)
-  - [Problem 2: Debug Broken Code - Bank and BankAccount](#problem-2-debug-broken-code---bank-and-bankaccount)
+  - [Problem 1: Debug Broken Code - Bank and BankAccount](#problem-1-debug-broken-code---bank-and-bankaccount)
+  - [Problem 2: Implement from Scratch - Pokemon](#problem-2-implement-from-scratch---pokemon)
   - [Problem 3: Implement from Scratch - Phone and iPhone](#problem-3-implement-from-scratch---phone-and-iphone)
 
 Welcome to your first module assessment! This assessment tests your understanding of JavaScript fundamentals including variables, functions, control flow, loops, arrays, and objects.
@@ -260,15 +258,16 @@ You're building a game where players can raise different digital pets: Cats, Dog
 ## Section 2: System Design
 
 ### Scenario
-You are tasked with designing a **restaurant ordering system**. The goal is to model how customers and restaurants interact through orders placed in the system.
+You are tasked with designing an **online restaurant ordering system**. Your system design should capture the *relationships* between objects, the *properties* and *methods* that describe their behavior, and the *data flow* that connects them.
 
-Your system design should capture the relationships between objects, the properties and methods that describe their behavior, and the data flow that connects them (for example, how an order moves from a customer to a restaurant and then to a driver).
+**System Functionality Requirements**:
+The system should be able to handle the following functionality:
+* A restaurant can manage the items in their menu
+* A customer can place an order with items from the restaurant's menu
+* An order can be marked as "pending", "in progress", "picked up", or "delivered"
 
-### Framing Questions (for your own thinking)
-You do **not** need to answer these directly, but use them to guide your design:
-- How does a customer indicate what they want in their order?
-- How does a restaurant make their menu of options known to the user?
-- How is a total calculated?
+**Constraints**:
+* Restaurants in this system are assumed to be pickup or delivery. No dining-in.
 
 ### Deliverables
 
@@ -277,86 +276,31 @@ You do **not** need to answer these directly, but use them to guide your design:
 
 2. **3–5 minute recorded explanation** covering:
    - Why you chose the specific relationships and class responsibilities.  
-   - How your system handles the creation and flow of an order (from when a customer places it to when it’s delivered).  
-   - Any trade-offs or design decisions you made.
+   - How your system handles each of the system functionality requirements above: 
+   - At least one design decision you made and what alternatives or trade-offs you considered to arrive at your final design.
+
+For the recording, we highly recommend that you write out the key points of your explanation in bullets in teh `src/system.design.md` file.
 
 ### Requirements
 
 Your class system _must_ have the following:
 
-1. **Include at least four interacting classes.** 
-   * Examples might include (but are not limited to): `Customer`, `Restaurant`, `Order`, etc...
-   * You are free to decide which classes are most important to your design.
+1. Include at least three interacting classes with at least one one-to-many relationship 
 
-2. **Model relationships using appropriate multiplicity.**
-   * At least one has-many relationship (e.g., a restaurant has many menu items) but you may include more.
-   * Show multiplicity using standard UML notation:
-     * Exactly one: `1`
-     * Zero or one: `0..1`
-     * Zero or more: `0..*`
-   * Add **association labels** to describe each relationship (e.g., "is created by", "creates many", "has one", etc...).
+2. Model relationships using arrows and appropriate multiplicity notation:
+  * Exactly one: `1`
+  * Zero or one: `0..1`
+  * Zero or more: `0..*`
 
-3. **Include detailed class definitions with:**
+3. Annotate relationships with **association labels** to describe each relationship (e.g., "is created by", "creates many", "has one", etc...).
+
+4. Include detailed class definitions with:
    * **Properties** (attributes) and their **data types**.
    * **Methods** (behaviors) and their **named parameters**.
-   * Enough detail to show how the classes interact (for example, how an order is placed or how a total is calculated).
-
-4. **Represent your design visually with a UML Class Diagram that includes:**
-
-   * All classes, properties, methods, and relationships.
-   * Multiplicity indicators for all relationships.
-   * Association labels that describe the purpose of each connection.
-   * Clear, uncluttered formatting so another programmer could understand the system from your diagram.
-
-
-### Evaluation Criteria
-Your submission will be assessed on:
-- **Clarity and completeness** of the UML diagram.  
-- **Correct use of object-oriented principles** (encapsulation, abstraction, relationships).  
-- **Accuracy of multiplicity notation** to represent class relationships.  
-- **Clarity of association labels** that describe relationships between classes.  
-- **Quality of reasoning** in your recorded explanation.  
-- **Creativity and realism** in modeling a system that could exist in the real world.
 
 ## Section 3: Class Implementation
 
-### Problem 1: Implement from Scratch - Pokemon
-
-**Instructions:** Create a Pokemon class with the following specifications:
-
-**Instance Properties:**
-
-- `name` (String)
-- `type` (String)
-- `level` (Number, starts at `1`)
-- `health` (Number, starts at `100`)
-
-**Instance Methods:**
-
-- `attack(target)` - reduces the target Pokemon's `health` by `10` multiplied by the Pokemon's `level`. Then print `"{name} attacked {target.name}!"`
-- `levelUp()` - increases `level` by `1` and increases `health` by `10`. Then print `"{name} leveled up to level {level}!"`
-- `isFainted()` - returns `true` if `health` is `0` or below, `false` otherwise
-
-**Static Properties**
-
-- Static property: `allPokemon` (array tracking all created Pokemon)
-
-**Static Methods**
-
-- Static method: `getTotalPokemon()` - returns count of all Pokemon created
-- Static method: `findByName(name)` - searches the `allPokemon` array and returns matching Pokemon
-
-**Test your code:**
-
-Create two `Pokemon` instances and demonstrate:
-
-1. One Pokemon attacking another
-2. Leveling up a Pokemon
-3. Attacking until one faints, then checking if it's fainted
-
----
-
-### Problem 2: Debug Broken Code - Bank and BankAccount
+### Problem 1: Debug Broken Code - Bank and BankAccount
 
 **Instructions:**: Look at the file `src/bank.js`. It was generated by AI and has several bugs. Fix them!
 
@@ -366,29 +310,137 @@ Then, comment out the broken code and replace it with your fixed code.
 
 ---
 
+### Problem 2: Implement from Scratch - Pokemon
+
+**Instructions:** Create a Pokemon class with the following specifications:
+
+- **Instance Properties:**
+  - `name` (String, public, set by the constructor)
+  - `type` (String, public, set by the constructor)
+  - `health` (Number, *private*, starting value of `100`)
+  - `level` (Number, *private*, starting value of `1`)
+- **Instance Methods:**
+  - "Getter" methods for the `health` and `level` private fields. Bonus points if you use the `get` syntax!
+  - `levelUp()` - increases `level` by `1` and increases `health` by `10`. Then print `"{name} leveled up to level {level}!"`.
+  - `isFainted()` - returns `true` if `health` is `0` or below, `false` otherwise.
+  - `attack(targetPokemon)` - reduces the target Pokemon's `health` by an amount equal to `10` times the attacking Pokemon's `level`. Then print `"{name} attacked {target.name}!"`.
+- **Static Properties**
+  - `allPokemon` (array tracking all created Pokemon)
+- **Static Methods**
+  - `getTotalPokemon()` - returns count of all Pokemon created
+  - `findByName(name)` - searches the `allPokemon` array and returns matching Pokemon
+
+Test your code with following example usage:
+
+```js
+const charizard = new Pokemon("Charizard", "Fire");
+const squirtle = new Pokemon("Squirtle", "Water");
+
+// 1. Checking instance properties
+console.log(charizard); // Pokemon { name: "Charizard", type: "Fire" }
+console.log(squirtle); // Pokemon { name: "Squirtle", type: "Water" }
+
+// 2. Leveling up a Pokemon
+squirtle.levelUp(); // Squirtle leveled up to level 2!
+squirtle.levelUp(); // Squirtle leveled up to level 3!
+squirtle.levelUp(); // Squirtle leveled up to level 4!
+
+// 3. Checking the level
+console.log(squirtle.getLevel()); // 2
+// OR
+console.log(squirtle.level); // 2
+
+
+// 4. Checking on health
+console.log(squirtle.getHealth());   // Should be 100
+// OR
+console.log(squirtle.health);   // Should be 100
+
+
+// 5. Attacking until one faints
+while (!charizard.isFainted()) {
+  squirtle.attack(charizard);  
+}
+console.log("Squirtle has fainted!");
+
+
+// 6. Finding a Pokemon instance
+console.log(Pokemon.findByName("Charizard")); // Pokemon { name: "Charizard", type: "Fire" }
+
+
+// 7. Viewing count of all Pokemon
+console.log("Total Pokemon:", Pokemon.getTotalPokemon()); // 2
+```
+
+---
+
 ### Problem 3: Implement from Scratch - Phone and iPhone
 
 **Instructions:** Create a class hierarchy for phones with inheritance:
 
 **Phone class (parent):**
 
-- Properties: `brand`, `model`, `batteryLevel` (starts at 100), `password` (private, must be a 4-character string)
-- Methods:
-    - `makeCall(number)` - decreases battery by 5, logs `"Calling {number}..."`
-    - `charge()` - sets battery back to 100, logs `"Phone fully charged"`
-    - `unlock(password)` - returns true and logs `“Phone unlocked”` if the provided password matches the private password. Otherwise returns false and logs `"Invalid password"`.
+Create a `Phone` class with the following:
 
-**iPhone class (child - inherits from Phone):**
+- Instance Properties:
+  - `brand` (String, public, set by the constructor)
+  - `model` (String, public, set by the constructor)
+  - `password` (String, private, set by the constructor)
+  - `batteryLevel` (Number, public, starting value of `100`) 
+- Instance Methods:
+  - `makeCall(number)` - decreases battery by `5`, returns `"Calling {number}"`
+  - `charge()` - sets battery back to `100`, returns `"Phone fully charged"`
+  - `unlock(password)` - returns `true` if the provided password matches the private password. Otherwise returns `false`.
 
-- Additional property: `iOSVersion`
-- Override `makeCall(number)` to also log `"Using FaceTime audio"` before calling the parent's `makeCall`
-- New method: `faceTime(name)` - decreases `battery` by 2, logs `"Facetiming {name}"`
+Test your code with following example usage:
 
-**Test your code:**
+```js
+const flipPhone = new Phone("Nokia", "Flip", "TimeToLearn882");
+console.log(flipPhone); // Phone { brand: "Nokia", model: "Flip", batteryLevel: 100 }
 
-Create an iPhone and demonstrate:
+// 1. Making a call and checking battery
+console.log(flipPhone.makeCall("123-456-7890")); // Calling 123-456-7890
+console.log(flipPhone.battery); // 95
 
-1. Making a call (should show both the FaceTime audio message and regular call message).
-2. Using the `faceTime` method.
-4. Charging the phone.
-3. Checking battery level after each action.
+// 2. Charging and checking battery
+console.log(flipPhone.charge("123-456-7890")); // Phone fully charged
+console.log(flipPhone.battery); // 100
+
+// 3. Unlocking the phone
+console.log(flipPhone.unlock("TimeToLearn882")); // Phone unlocked
+console.log(flipPhone.unlock("TimeToLearn882")); // Invalid Password
+```
+
+**iPhone class (child):**
+
+Create a `iPhone` class with the following:
+
+- Is a subclass of the `Phone` class
+- The `brand` should always be set to `"Apple"`
+- One additional property: `numberOfCameras` (Number, public, set by the constructor)
+- Override `makeCall(number)` to return `"Calling {number} using FaceTime audio"`
+- New method: `faceTime(name)` - decreases `battery` by 10, returns `"Facetiming {name}"`
+
+Test your code with following example usage:
+
+```js
+const smartPhone = new iPhone("iPhone 14 Pro", "TimeToLearn882", 3);
+
+console.log(smartPhone); // iPhone { brand: "Apple", model: "iPhone 14 Pro", numberOfCameras: 3, batteryLevel: 100}
+
+// 1. Making a call 
+console.log(smartPhone.makeCall("555-1234")); // Calling 555-1234 using FaceTime audio
+console.log(smartPhone.batteryLevel); // Should be 95
+
+// 2. Using the faceTime method
+console.log(smartPhone.faceTime("Alice")); // Facetiming Alice
+console.log(smartPhone.batteryLevel); // Should be 85
+
+// 3. Charge the phone
+console.log(smartPhone.charge()); // Phone fully charged
+console.log(smartPhone.batteryLevel); // Should be 100
+
+// 4. Unlock the phone
+console.log(smartPhone.unlock("0000")); // Invalid password
+console.log(smartPhone.unlock("TimeToLearn882")); // true
+```

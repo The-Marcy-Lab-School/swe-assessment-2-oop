@@ -4,6 +4,7 @@
   - [Technical Score (0-3 points)](#technical-score-0-3-points)
   - [Writing Quality Score (0-3 points)](#writing-quality-score-0-3-points)
 - [SECTION 2: System Design + Video](#section-2-system-design--video)
+  - [Evaluation Criteria](#evaluation-criteria)
 - [SECTION 3: Class Implementation](#section-3-class-implementation)
   - [Algorithm Score (0-3 points)](#algorithm-score-0-3-points)
   - [Code Style (0-1 point)](#code-style-0-1-point)
@@ -40,7 +41,14 @@ Writing Quality does not include correctness, required terminology, or conceptua
 
 ## SECTION 2: System Design + Video
 
-TBD...
+### Evaluation Criteria
+Your submission will be assessed on:
+- **Clarity and completeness** of the UML diagram.  
+- **Correct use of object-oriented principles** (encapsulation, abstraction, relationships).  
+- **Accuracy of multiplicity notation** to represent class relationships.  
+- **Clarity of association labels** that describe relationships between classes.  
+- **Quality of reasoning** in your recorded explanation.  
+- **Creativity and realism** in modeling a system that could exist in the real world.
 
 ## SECTION 3: Class Implementation
 

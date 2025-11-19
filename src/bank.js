@@ -9,16 +9,21 @@ class BankAccount {
   deposit(amount) {
     this.balance += amount;
     console.log(`Deposited $${amount}. New balance: $${this.balance}`);
+    return this.balance;
   }
 
   withdraw(amount) {
-    this.balance -= amount;
-    console.log(`Withdrew $${amount}. New balance: $${this.balance}`);
-
+    if (amount > this.balance) {
+      console.log(`Withdrawal failed. Insufficient funds.`);
+    } else {
+      this.balance -= amount;
+      console.log(`Withdrew $${amount}. New balance: $${this.balance}`);
+    }
+    return this.balance;
   }
 
   getBalance() {
-    return balance;
+    return #balance;
   }
 
   static getTotalNumberOfAccounts() {

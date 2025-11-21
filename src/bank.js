@@ -53,3 +53,9 @@ class Bank {
     return accounts.find((account) => account.accountNumber = accountNumber);
   }
 }
+
+// TEST YOUR CODE HERE
+
+
+// DO NOT REMOVE
+module.exports = { BankAccount, Bank };

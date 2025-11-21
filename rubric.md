@@ -1,5 +1,6 @@
 # Mod 1 Assessment: Grading Rubric
 
+- [GRADING OVERVIEW](#grading-overview)
 - [SHORT RESPONSE](#short-response)
   - [Technical Score (0-3 points)](#technical-score-0-3-points)
   - [Writing Quality Score (0-3 points)](#writing-quality-score-0-3-points)
@@ -7,13 +8,24 @@
   - [Implementation Score (0-3 points)](#implementation-score-0-3-points)
   - [Code Style (0-1 point)](#code-style-0-1-point)
 - [System Design + Video](#system-design--video)
-  - [UML Diagram Rubric](#uml-diagram-rubric)
-  - [Verbal Evaluation Criteria (4 points)](#verbal-evaluation-criteria-4-points)
+  - [UML Diagram Rubric (3 points)](#uml-diagram-rubric-3-points)
+  - [Verbal Evaluation Criteria (3 points)](#verbal-evaluation-criteria-3-points)
 
+## GRADING OVERVIEW
+
+This assessment has the following point totals
+* Short Response: 24 points
+* Class Implementation: 12 points
+* System Design: 6 points
+
+For a student to demonstrate mastery over the content in this assessment, they must score 75% or higher on ALL 3 sections. The target scores for each section are as follows:
+* Short Response: 18+ points
+* Class Implementation: 9+ points
+* System Design: 4.5+ points
 
 ## SHORT RESPONSE 
 
-Each question is graded on two components: Technical & Writing Quality
+Each question is graded out of 6 points. 3 points for technical content and 3 points for writing quality. This section is worth 24 points.
 
 **Note on Writing Quality vs. Technical Accuracy:** 
 The Writing score evaluates how well you communicate your ideas (grammar, spelling, organization, sentence clarity), not whether you use specific technical terms. You can write very clearly and still lose Technical points for missing required terminology. Conversely, using correct terms doesn't guarantee a high Writing score if your explanation is disorganized or hard to follow.
@@ -42,7 +54,7 @@ Writing Quality does not include correctness, required terminology, or conceptua
 
 ## Class Implementation
 
-Each question is graded on two components:
+Each question is graded out of 4 points. 3 points for implementation and 1 point for code style. This section is worth 12 points.
 
 ### Implementation Score (0-3 points)
 
@@ -66,7 +78,17 @@ Code style points may only be awarded for problems that have been attempted. If 
 
 ## System Design + Video
 
-### UML Diagram Rubric
+### UML Diagram Rubric (3 points)
+
+Take the score for each section and divide by 5 to get the average score out of 3 points. For example, a student may have the following score:
+
+- **Clarity and Completeness**: 3 points
+- **Use of OOP Principles**: 2 points
+- **Multiplicity Notation**: 1 points
+- **Association Labels**: 3 points
+- **Creativity and Realism**: 3 points
+
+Their total score would be **12** points. Their average score out of 3 points would be 12/5 = **2.4 points out of 3**.
 
 | Criteria                                                      | 3 - Exemplary                                                                                                    | 2 - Proficient                                               | 1 - Developing                                               | 0 - Incomplete                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|--------------------------------------------------------------|------------------------------------------|
@@ -76,7 +98,17 @@ Code style points may only be awarded for problems that have been attempted. If 
 | **Association Labels**                                        | Association labels are clear, descriptive, and unambiguous for every relationship.                               | Mostly clear association labels, with minor ambiguities.      | Several labels missing/unclear or vague.                      | Lacks labels or labels are meaningless.  |
 | **Creativity and Realism**                                    | Design demonstrates creativity and models a plausible real-world system.                                         | Generally realistic/plausible, with some minor issues.        | Lacks realism or creativity in significant ways.              | No realism, not a plausible system.      |
   
-### Verbal Evaluation Criteria (4 points)
+### Verbal Evaluation Criteria (3 points)
+
+Take the score for each section and divide by 4 to get the score out of 3 points. For example, a student may have the following score:
+
+- **Technical Vocabulary**: 3 points
+- **Completeness**: 3 points
+- **Clarity**: 1 points
+- **Conciseness**: 2 points
+
+
+Their total score would be **9** points. Their average score out of 3 points would be 9/4 = **2.25 points out of 3**.
 
 | Component               | 3                                                                                                                                                   | 2                                                                                   | 1                                                                            | 0                                                              |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|------------------------------------------------------------------------------|----------------------------------------------------------------|

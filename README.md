@@ -24,7 +24,7 @@
   - [Part 2: Create a UML Diagram](#part-2-create-a-uml-diagram)
   - [Step 3: Record Your Explanation](#step-3-record-your-explanation)
 
-Welcome to your first module assessment! This assessment tests your understanding of JavaScript fundamentals including variables, functions, control flow, loops, arrays, and objects.
+Welcome to your Object-Oriented Programming assessment! This assessment tests your understanding of classes, encapsulation, inheritance, polymorphism, and system design.
 
 ## Assessment Overview
 
@@ -42,10 +42,10 @@ swe-assessment-2-oop/
 ├── rubric.md                          # The grading rubric for this assessment
 └── src/
     ├── short-response.md             # Section 1: Answer questions here
-    ├── system-design.md              # Section 2: Include a link to your design and your Loom recording
-    ├── pokemon.js                    # Section 3: Problem 1
-    ├── bankAccount.js                # Section 3: Problem 2
-    └── pokemon.js                    # Section 3: Problem 3
+    ├── phone.js                      # Section 2: Problem 3 - Implement Phone and iPhone
+    ├── bank.js                       # Section 2: Problem 1 - Debug Bank and BankAccount
+    ├── pokemon.js                    # Section 2: Problem 2 - Implement Pokemon
+    └── system-design.md              # Section 3: Include a link to your design and your Loom recording
 ```
 
 --- 
@@ -90,8 +90,8 @@ Before submitting your assessment, go through this checklist to ensure you haven
 
 **Submission Checklist:**
 - [ ] All questions in `src/short-response.md` are answered
-- [ ] All functions in `src/from-scratch.js` are written
-- [ ] All links are provided in `src/system-design.md` are fixed
+- [ ] All classes in `src/bank.js`, `src/pokemon.js`, and `src/phone.js` are implemented
+- [ ] All links in `src/system-design.md` are provided
 - [ ] Short responses have been proofread and cleared of any typos or grammar mistakes.
 - [ ] Run `npm run lint` - fix any errors
 - [ ] Remove any `console.log` statements used for debugging
@@ -331,22 +331,22 @@ squirtle.levelUp(); // Squirtle leveled up to level 3!
 squirtle.levelUp(); // Squirtle leveled up to level 4!
 
 // 3. Checking the level
-console.log(squirtle.getLevel()); // 2
+console.log(squirtle.getLevel()); // 4
 // OR if you use the get syntax
-console.log(squirtle.level); // 2
+console.log(squirtle.level); // 4
 
 
 // 4. Checking on health
-console.log(squirtle.getHealth());   // Should be 100
+console.log(squirtle.getHealth());   // Should be 130 (100 + 10*3 from leveling up)
 // OR if you use the get syntax
-console.log(squirtle.health);   // Should be 100
+console.log(squirtle.health);   // Should be 130 (100 + 10*3 from leveling up)
 
 
 // 5. Attacking until one faints
 while (!charizard.isFainted()) {
   squirtle.attack(charizard);  
 }
-console.log("Squirtle has fainted!");
+console.log("Charizard has fainted!");
 
 
 // 6. Finding a Pokemon instance
@@ -385,15 +385,15 @@ console.log(flipPhone); // Phone { brand: "Nokia", model: "Flip", batteryLevel: 
 
 // 1. Making a call and checking battery
 console.log(flipPhone.makeCall("123-456-7890")); // Calling 123-456-7890
-console.log(flipPhone.battery); // 95
+console.log(flipPhone.batteryLevel); // 95
 
 // 2. Charging and checking battery
-console.log(flipPhone.charge("123-456-7890")); // Phone fully charged
-console.log(flipPhone.battery); // 100
+console.log(flipPhone.charge()); // Phone fully charged
+console.log(flipPhone.batteryLevel); // 100
 
 // 3. Unlocking the phone
-console.log(flipPhone.unlock("TimeToLearn882")); // Phone unlocked
-console.log(flipPhone.unlock("TimeToLearn882")); // Invalid Password
+console.log(flipPhone.unlock("TimeToLearn882")); // true
+console.log(flipPhone.unlock("wrongpassword")); // false
 ```
 
 #### Part 2: **iPhone class (child):**
@@ -404,7 +404,7 @@ Create a `iPhone` class with the following:
 - The `brand` should always be set to `"Apple"`
 - One additional property: `numberOfCameras` (Number, public, set by the constructor)
 - Override `makeCall(number)` to return `"Calling {number} using FaceTime audio"`
-- New method: `faceTime(name)` - decreases `battery` by 10, returns `"Facetiming {name}"`
+- New method: `faceTime(name)` - decreases `batteryLevel` by 10, returns `"Facetiming {name}"`
 
 Test your code with following example usage:
 
@@ -426,7 +426,7 @@ console.log(smartPhone.charge()); // Phone fully charged
 console.log(smartPhone.batteryLevel); // Should be 100
 
 // 4. Unlock the phone
-console.log(smartPhone.unlock("0000")); // Invalid password
+console.log(smartPhone.unlock("0000")); // false
 console.log(smartPhone.unlock("TimeToLearn882")); // true
 ```
 
@@ -489,7 +489,7 @@ When you are done, click **Share** in the top right corner, turn on the **Sharea
    
 2. In your video, you must explain the **Explanation Topics** listed in part 1.
 
-3. Prior to recording, we highly recommend that you write out the key points of your explanation in bullets in the `src/system.design.md` file. 
+3. Prior to recording, we highly recommend that you write out the key points of your explanation in bullets in the `src/system-design.md` file. 
   
 4. Be specific and use proper technical vocabulary:
    | ✅ Good Example                                                          | 🚫 Bad Example                |

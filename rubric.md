@@ -54,7 +54,7 @@ Writing Quality does not include correctness, required terminology, or conceptua
 
 ## Class Implementation
 
-Each question is graded out of 4 points. 3 points for implementation and 1 point for code style. This section is worth 12 points.
+Each question is graded out of 3 points. 3 points for implementation. An additional 1 point is awarded if the code is free of any egregious linting errors. This section is worth 10 points total.
 
 ### Implementation Score (0-3 points)
 
@@ -67,11 +67,11 @@ Each question is graded out of 4 points. 3 points for implementation and 1 point
 
 ### Code Style (0-1 point)
 
-Code style points may only be awarded for problems that have been attempted. If a problem has not be attempted, give 0 points.okay
+The Code Style score should only be applied to attempted problems. For example, if only 1 problem was attempted, they can still earn code style points as long as that 1 problem is free of egregious linting errors. However, if 0 problems were attempted, they can NOT earn code style points.
 
 | Score | Criteria |
 |-------|----------|
-| **1 - Clean Code** | • No linting errors<br>• Descriptive variable names<br>• No unused/commented code<br>• No syntax errors |
+| **1 - Clean Code** | • No linting errors (or none that are egregious such as linting, white spacing, semi colons, or use of "")<br>• Descriptive variable names<br>• No unused/commented code (testing code is fine)<br>• No syntax errors |
 | **0 - Style Issues** | • Has linting errors, syntax errors, poor variable names, OR unused code |
 
 ---

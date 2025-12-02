@@ -16,9 +16,9 @@
 - [Section 2: Class Implementation](#section-2-class-implementation)
   - [Problem 1: Debug Broken Code - Bank and BankAccount](#problem-1-debug-broken-code---bank-and-bankaccount)
   - [Problem 2: Implement from Scratch - Pokemon](#problem-2-implement-from-scratch---pokemon)
-  - [Problem 3: Implement from Scratch - Phone and iPhone](#problem-3-implement-from-scratch---phone-and-iphone)
+  - [Problem 3: Implement from Scratch - Phone and IPhone](#problem-3-implement-from-scratch---phone-and-iphone)
     - [Part 1: Phone class (parent):](#part-1-phone-class-parent)
-    - [Part 2: iPhone class (child):](#part-2-iphone-class-child)
+    - [Part 2: IPhone class (child):](#part-2-iphone-class-child)
 - [Section 3: System Design](#section-3-system-design)
   - [Part 1: Design Your System](#part-1-design-your-system)
   - [Part 2: Create a UML Diagram](#part-2-create-a-uml-diagram)
@@ -42,7 +42,7 @@ swe-assessment-2-oop/
 ├── rubric.md                          # The grading rubric for this assessment
 └── src/
     ├── short-response.md             # Section 1: Answer questions here
-    ├── phone.js                      # Section 2: Problem 3 - Implement Phone and iPhone
+    ├── phone.js                      # Section 2: Problem 3 - Implement Phone and IPhone
     ├── bank.js                       # Section 2: Problem 1 - Debug Bank and BankAccount
     ├── pokemon.js                    # Section 2: Problem 2 - Implement Pokemon
     └── system-design.md              # Section 3: Include a link to your design and your Loom recording
@@ -362,9 +362,9 @@ console.log("Total Pokemon:", Pokemon.getTotalPokemon()); // 2
 
 ---
 
-### Problem 3: Implement from Scratch - Phone and iPhone
+### Problem 3: Implement from Scratch - Phone and IPhone
 
-**Instructions:** In the `src/phone.js` file, demonstrate inheritance by creating a `Phone` and `iPhone` class.
+**Instructions:** In the `src/phone.js` file, demonstrate inheritance by creating a `Phone` and `IPhone` class.
 
 #### Part 1: Phone class (parent):
 
@@ -399,9 +399,9 @@ console.log(flipPhone.unlock("TimeToLearn882")); // true
 console.log(flipPhone.unlock("wrongpassword")); // false
 ```
 
-#### Part 2: iPhone class (child):
+#### Part 2: IPhone class (child):
 
-Create a `iPhone` class with the following:
+Create a `IPhone` class with the following:
 
 - Is a subclass of the `Phone` class
 - The `brand` should always be set to `"Apple"`
@@ -412,9 +412,9 @@ Create a `iPhone` class with the following:
 Test your code with following example usage:
 
 ```js
-const smartPhone = new iPhone("iPhone 14 Pro", "TimeToLearn882", 3);
+const smartPhone = new IPhone("IPhone 14 Pro", "TimeToLearn882", 3);
 
-console.log(smartPhone); // iPhone { brand: "Apple", model: "iPhone 14 Pro", numberOfCameras: 3, batteryLevel: 100}
+console.log(smartPhone); // IPhone { brand: "Apple", model: "IPhone 14 Pro", numberOfCameras: 3, batteryLevel: 100}
 
 // 1. Making a call 
 console.log(smartPhone.makeCall("555-1234")); // Calling 555-1234 using FaceTime audio

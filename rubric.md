@@ -15,12 +15,12 @@
 
 This assessment has the following point totals
 * Short Response: 24 points
-* Class Implementation: 12 points
+* Class Implementation: 10 points
 * System Design: 6 points
 
 For a student to demonstrate mastery over the content in this assessment, they must score 75% or higher on ALL 3 sections. The target scores for each section are as follows:
 * Short Response: 18+ points
-* Class Implementation: 9+ points
+* Class Implementation: 8+ points
 * System Design: 4.5+ points
 
 ## SHORT RESPONSE 

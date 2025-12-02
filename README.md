@@ -17,8 +17,8 @@
   - [Problem 1: Debug Broken Code - Bank and BankAccount](#problem-1-debug-broken-code---bank-and-bankaccount)
   - [Problem 2: Implement from Scratch - Pokemon](#problem-2-implement-from-scratch---pokemon)
   - [Problem 3: Implement from Scratch - Phone and iPhone](#problem-3-implement-from-scratch---phone-and-iphone)
-    - [Part 1: **Phone class (parent):**](#part-1-phone-class-parent)
-    - [Part 2: **iPhone class (child):**](#part-2-iphone-class-child)
+    - [Part 1: Phone class (parent):](#part-1-phone-class-parent)
+    - [Part 2: iPhone class (child):](#part-2-iphone-class-child)
 - [Section 3: System Design](#section-3-system-design)
   - [Part 1: Design Your System](#part-1-design-your-system)
   - [Part 2: Create a UML Diagram](#part-2-create-a-uml-diagram)
@@ -258,13 +258,22 @@ As a result, the AI Coding Agent produced the file `src/bank.js`. It is your tas
 Here is some sample test code with comments indicating expected output. You can use this directly in the `src/bank.js` file
 
 ```js
-const myBank = new Bank("First National");
-console.log(myBank); // Bank { name: "First National" }
-
 const account1 = new BankAccount("001", "Alice");
 const account2 = new BankAccount("002", "Bob");
 console.log(account1); // BankAccount { accountNumber: "001", ownerName: "Alice" }
 console.log(account2); // BankAccount { accountNumber: "002", ownerName: "Bob" }
+
+console.log(account1.getBalance()); // 0
+account1.deposit(100); // Prints "Deposited $100. New Balance: 100"
+account1.withdraw(50); // Prints "Withdrew $50. New Balance: 50"
+account1.withdraw(1000); // Prints "Withdrawal failed. Insufficient funds."
+console.log(account1.getBalance()); // 50
+
+new BankAccount("003", "Charlie");
+console.log("Total accounts:", BankAccount.getTotalAccounts()); // 3
+
+const myBank = new Bank("First National");
+console.log(myBank); // Bank { name: "First National" }
 
 myBank.addAccount(account1);
 myBank.addAccount(account2);
@@ -276,15 +285,9 @@ console.log(myBank.accounts);
 ]
 */
 
-account1.deposit(100); // Deposited $100. New Balance: 100
-account1.withdraw(50); // Withdrew $50. New Balance: 50
-account2.deposit(250); // Deposited $250. New Balance: 250
+account2.deposit(250); // Prints "Deposited $250. New Balance: 250"
 console.log(myBank.getTotalBalance()); // 300
-
 console.log(myBank.findAccount("001").ownerName); // "Alice"
-
-new BankAccount("003", "Charlie");
-console.log("Total accounts:", BankAccount.getTotalAccounts()); // Should be 3
 ```
 
 Run the file with
@@ -344,7 +347,7 @@ console.log(squirtle.health);   // Should be 130 (100 + 10*3 from leveling up)
 
 // 5. Attacking until one faints
 while (!charizard.isFainted()) {
-  squirtle.attack(charizard);  
+  squirtle.attack(charizard);  // Prints "Squirtle attacked Charizard!"
 }
 console.log("Charizard has fainted!");
 
@@ -363,7 +366,7 @@ console.log("Total Pokemon:", Pokemon.getTotalPokemon()); // 2
 
 **Instructions:** In the `src/phone.js` file, demonstrate inheritance by creating a `Phone` and `iPhone` class.
 
-#### Part 1: **Phone class (parent):**
+#### Part 1: Phone class (parent):
 
 Create a `Phone` class with the following:
 
@@ -396,7 +399,7 @@ console.log(flipPhone.unlock("TimeToLearn882")); // true
 console.log(flipPhone.unlock("wrongpassword")); // false
 ```
 
-#### Part 2: **iPhone class (child):**
+#### Part 2: iPhone class (child):
 
 Create a `iPhone` class with the following:
 

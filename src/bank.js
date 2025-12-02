@@ -50,12 +50,13 @@ class Bank {
   }
 
   findAccount(accountNumber) {
-    return accounts.find((account) => account.accountNumber = accountNumber);
+    return accounts.find((account) => {
+      return account.accountNumber = accountNumber
+    });
   }
 }
 
 // TEST YOUR CODE HERE
-
 
 // DO NOT REMOVE
 module.exports = { BankAccount, Bank };

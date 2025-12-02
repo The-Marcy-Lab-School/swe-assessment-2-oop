@@ -350,7 +350,7 @@ while (!charizard.isFainted()) {
   squirtle.attack(charizard);  // Prints "Squirtle attacked Charizard!"
 }
 console.log("Charizard has fainted!");
-
+console.log(charizard.isFainted()); // true
 
 // 6. Finding a Pokemon instance
 console.log(Pokemon.findByName("Charizard")); // Pokemon { name: "Charizard", type: "Fire" }

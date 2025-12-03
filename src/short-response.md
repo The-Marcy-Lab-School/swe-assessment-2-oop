@@ -17,7 +17,7 @@ In your own words, explain what does _encapsulation_ refer to? Why is this conce
 
 Provide a code snippet to illustrate _encapsulation_.
 
-## Response 2
+## Response 1
 
 ---
 

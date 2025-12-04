@@ -1,4 +1,4 @@
-# Mod 1 Assessment: Grading Rubric
+# Grading Rubric
 
 - [GRADING OVERVIEW](#grading-overview)
 - [SHORT RESPONSE](#short-response)
